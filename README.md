@@ -77,7 +77,7 @@ List<Employee> empList = emps.stream().filter(**e -> e.getSalary() < 20000**).ma
 	
 
 Code:
-**Method4 Java11 way code:**
+**Method4 Java16 way code:**
 **With Predicate and Function**
 
 Predicate<Employee> predicate = e -> e.sal < 20000;
