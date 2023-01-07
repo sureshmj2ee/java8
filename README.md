@@ -69,7 +69,7 @@ Code:
 this is only changed. here l2 contains employee details whose salary got increased by 3000
 
 	
-List<Employee> empList = emps.stream().filter(**e -> e.getSalary() < 20000**).map( x -> **new Employee(x.getId(), x.getName(),x.getSalary()+2000)**)
+List<Employee> empList = emps.stream().filter(**e -> e.getSalary() < 20000**).map( x -> **new Employee(x.getId(), x.getName(),x.getSalary()+3000)**)
 				.collect(Collectors.toList());
 	
 **Note:** **emps** list will not have all details with updated salaries. only **empList** will have updated salaries.
