@@ -22,6 +22,7 @@ After update sal by 3000 where sal < 20000. Complete List :
 
 Code:
 **Method1 fully Java8 way code:**
+**With Predicate and Function**
 
 Predicate<Employee> predicate = e -> e.sal < 20000;
 
@@ -37,6 +38,7 @@ List<Employee> updatedSalEmpList = emps.stream().filter(**predicate**).map(x -> 
 	
 Code:
 **Method2 Java8 way code:**
+**With Predicate and Function**
 	
 Predicate<Employee> predicate = e -> e.sal < 20000;
 						   
