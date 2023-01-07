@@ -28,3 +28,19 @@ return e;
 List<Employee> updatedSalEmpList = emps.stream().filter(**predicate**).map(x -> **function.apply(x)**)
 .collect(Collectors.toList());
   
+
+**Method2 Java8 way code:**
+  Predicate<Employee> predicate = e -> e.sal < 20000;
+Function<Employee, Employee> function = e -> {
+e.sal = e.sal+3000;
+return e;
+};
+
+this is only changed. here l2 contains employee details whose salary got increased by 3000
+  List<Employee> l2 = new ArrayList<>();
+		for (Employee e : emps) {
+			if (predicate.test(e)) {
+				l2.add(function.apply(e));
+			}
+		}
+Note: **emps** list will have all details with updated salaries. 
