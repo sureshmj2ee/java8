@@ -24,6 +24,7 @@ Code:
 **Method1 fully Java8 way code:**
 
 Predicate<Employee> predicate = e -> e.sal < 20000;
+
 Function<Employee, Employee> function = e -> {
 e.sal = e.sal+3000;
 return e;
@@ -33,6 +34,8 @@ List<Employee> updatedSalEmpList = emps.stream().filter(**predicate**).map(x -> 
 .collect(Collectors.toList());
   
 
+	
+Code:
 **Method2 Java8 way code:**
 	
 Predicate<Employee> predicate = e -> e.sal < 20000;
