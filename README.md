@@ -38,7 +38,7 @@ List<Employee> updatedSalEmpList = emps.stream().filter(**predicate**).map(x -> 
 	
 Code:
 **Method2 Java8 way code:**
-**With Predicate and Function**
+**With Predicate, Function and For loop**
 	
 Predicate<Employee> predicate = e -> e.sal < 20000;
 						   
