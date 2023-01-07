@@ -73,3 +73,19 @@ List<Employee> empList = emps.stream().filter(**e -> e.getSalary() < 20000**).ma
 				.collect(Collectors.toList());
 	
 **Note:** **emps** list will not have all details with updated salaries. only **empList** will have updated salaries.
+
+	
+
+Code:
+**Method4 Java11 way code:**
+**With Predicate and Function**
+
+Predicate<Employee> predicate = e -> e.sal < 20000;
+
+Function<Employee, Employee> function = e -> {
+e.sal = e.sal+3000;
+return e;
+};
+  
+List<Employee> updatedSalEmpList = emps.stream().filter(**predicate**).map(x -> **function.apply(x)**)
+**.toList()**; // instead of .collect(Collectors.toList()); we can use **.toList()** 
