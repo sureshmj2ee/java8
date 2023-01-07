@@ -10,13 +10,13 @@ Output
 ==================================================================================================
 
 Before Update:
-  [Employee [id=1 , name=A , sal=21000.0], Employee [id=2 , name=B , sal=21000.0], Employee [id=3 , name=C , sal=15000.0], Employee [id=4 , name=D , sal=22000.0],     Employee [id=5 , name=E , sal=19000.0]]
+  [Employee [id=1 , name=A , sal=21000.0], Employee [id=2 , name=B , sal=21000.0], Employee [id=3 , name=C , **sal=15000.0**], Employee [id=4 , name=D , sal=22000.0],     Employee [id=5 , name=E , **sal=19000.0**]]
 
 After update sal by 3000 where sal < 20000. Only updated List :
-  [Employee [id=3 , name=C , sal=18000.0], Employee [id=5 , name=E , sal=22000.0]]
+  [Employee [id=3 , name=C , **sal=18000.0**], Employee [id=5 , name=E , **sal=22000.0**]]
 
 After update sal by 3000 where sal < 20000. Complete List :
-  [Employee [id=1 , name=A , sal=21000.0], Employee [id=2 , name=B , sal=21000.0], Employee [id=3 , name=C , sal=18000.0], Employee [id=4 , name=D , sal=22000.0], Employee [id=5 , name=E , sal=22000.0]]
+  [Employee [id=1 , name=A , sal=21000.0], Employee [id=2 , name=B , sal=21000.0], Employee [id=3 , name=C , **sal=18000.0**], Employee [id=4 , name=D , sal=22000.0], Employee [id=5 , name=E , **sal=22000.0**]]
 
 ============================================================================================
 
@@ -56,3 +56,18 @@ List<Employee> l2 = new ArrayList<>();
 		}
 	
 **Note:** **emps** list will have all details with updated salaries. 
+
+	
+	
+Code:
+**Method3 Java8 way code:**
+**Without Predicate and Function**
+
+	
+this is only changed. here l2 contains employee details whose salary got increased by 3000
+
+	
+List<Employee> empList = emps.stream().filter(**e -> e.getSalary() < 20000**).map( x -> **new Employee(x.getId(), x.getName(),x.getSalary()+2000)**)
+				.collect(Collectors.toList());
+	
+**Note:** **emps** list will not have all details with updated salaries. only **empList** will have updated salaries.
